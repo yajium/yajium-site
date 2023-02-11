@@ -4,15 +4,18 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 body {
-  font-family: Verdana, sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   margin: auto;
   max-width: 65ch;
   text-align: left;
-  background-color: #c3e7ef;
+  background-color: #315d86;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
   color: #444;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 h1,
 h2,

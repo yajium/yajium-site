@@ -1,22 +1,57 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const cards = [
+  {
+    itemName: "About",
+    description: "yajiumのことを紹介しています",
+  },
+  {
+    itemName: "Works",
+    description: "へんてこな作ったものたちを紹介しています",
+  },
+  {
+    itemName: "Blog",
+    description: "頑張って文字を書いています",
+  },
+];
 ---
 
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <div class="saturate-50 p-0">
-        <img src="/public/natsuzora.jpg" />
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout isHome>
+  <div class="cards">
+    {
+      cards.map((c) => (
+        <div class="card">
+          <p>{c.description}</p>
+          <h2>
+            {c.itemName}
+            <img src="/rorisu_tasogare.png" width={30} height={20} />
+          </h2>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .cards {
+    @apply grid grid-rows-1 gap-11 mx-3;
+  }
+  .card {
+    @apply rounded-3xl px-6 py-3;
+    background-color: #e5dcdc;
+  }
+  .card h2 {
+    @apply text-3xl font-bold mb-2 flex;
+    color: #315d86;
+    justify-content: space-between;
+  }
+  .card p {
+    @apply my-6;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: #454242;
+  }
+</style>
