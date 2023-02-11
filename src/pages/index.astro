@@ -5,14 +5,17 @@ const cards = [
   {
     itemName: "About",
     description: "yajiumのことを紹介しています",
+    href: "/about",
   },
   {
     itemName: "Works",
     description: "へんてこな作ったものたちを紹介しています",
+    href: "/works",
   },
   {
     itemName: "Blog",
     description: "頑張って文字を書いています",
+    href: "blog",
   },
 ];
 ---
@@ -21,13 +24,13 @@ const cards = [
   <div class="cards">
     {
       cards.map((c) => (
-        <div class="card">
+        <a href={c.href} class="card">
           <p>{c.description}</p>
           <h2>
             {c.itemName}
             <img src="/rorisu_tasogare.png" width={30} height={20} />
           </h2>
-        </div>
+        </a>
       ))
     }
   </div>
@@ -35,7 +38,7 @@ const cards = [
 
 <style>
   .cards {
-    @apply grid grid-rows-1 gap-11 mx-3;
+    @apply grid grid-rows-1 gap-11 mx-6 my-auto lg:basis-1/2;
   }
   .card {
     @apply rounded-3xl px-6 py-3;

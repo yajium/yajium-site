@@ -1,0 +1,47 @@
+---
+import { SITE_TITLE } from "../consts";
+import ToolLinks from "./ToolLinks";
+---
+
+<div class="side-bar">
+  <div class="icon-head">
+    <img src="/rorisu.png" width={120} height={120} />
+    <h2>
+      {SITE_TITLE}
+    </h2>
+  </div>
+  <div class="my-desc">
+    <p>
+      こんにちは、yajiumです。<br />
+      ここまで見に来てくださり、ありがとうございます。<br />
+      今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。<br />
+      最近の趣味はTwitterでパグを見て癒されることです。<br />
+      今の目標はソフトウェアエンジニアになることで、それに向けて毎日少しずつ勉強を頑張っています。<br
+      />
+      Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。<br
+      />
+      海が好きなので、このサイトは海底をイメージしてデザインしました。<br />
+    </p>
+  </div>
+</div>
+
+<style>
+  .side-bar {
+    @apply px-6 pt-6 pb-4 hidden lg:block lg:basis-1/4;
+  }
+  .icon-head {
+    @apply grid;
+  }
+  .icon-head h2 {
+    color: #e5dcdc;
+    @apply font-medium text-xl mt-6;
+  }
+  .my-desc {
+    @apply hidden my-4 md:block;
+  }
+
+  .my-desc p {
+    @apply text-sm;
+    color: #d4caca;
+  }
+</style>

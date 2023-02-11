@@ -14,7 +14,7 @@ import ToolLinks from "./ToolLinks";
 
 <style>
   header {
-    @apply px-6 pt-6 pb-4;
+    @apply px-6 pt-6 pb-4 lg:hidden;
   }
   .icon-header {
     @apply grid justify-items-center;
@@ -22,5 +22,13 @@ import ToolLinks from "./ToolLinks";
   .icon-header h2 {
     color: #e5dcdc;
     @apply font-medium text-xl text-center mt-6;
+  }
+  .my-desc {
+    @apply hidden mx-4 my-4 md:block;
+  }
+
+  .my-desc p {
+    @apply text-sm;
+    color: #b0a6a6;
   }
 </style>

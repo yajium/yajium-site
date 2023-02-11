@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import type { ReactNode } from "react";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Sidebar from "@components/Sidebar.astro";
 
 type Props = {
   isHome: boolean;
@@ -24,14 +25,19 @@ const { title, description } = Astro.props;
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <slot />
+      <div class="contents">
+        <Sidebar />
+        <slot />
+      </div>
     </main>
+    <Footer />
     <style>
       main {
-        @apply px-6 py-4;
-        flex: 1;
+        @apply container mx-auto my-auto;
+      }
+      .contents {
+        @apply lg:flex lg:justify-center;
       }
     </style>
-    <Footer />
   </body>
 </html>
