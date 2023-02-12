@@ -15,7 +15,7 @@
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
-    "@heroicons/react": "^2.0.14",
+    "@heroicons/react": "^2.0.15",
     "astro": "^2.0.2",
     "microcms-js-sdk": "^2.3.2",
     "react-icons": "^4.7.1",
