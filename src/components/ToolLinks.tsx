@@ -1,4 +1,3 @@
-import { Bars3BottomRightIcon } from "@heroicons/react/24/outline";
 import { SlSocialTwitter } from "react-icons/sl";
 import { SiZenn } from "react-icons/si";
 import { RiGithubLine } from "react-icons/ri";
@@ -11,10 +10,6 @@ const links = [
     icon: <TbMoodNeutral />,
     isBlank: false,
   },
-  // {
-  //     href: "https://twitter.com/yajium_",
-  //     icon: <SlSocialTwitter />
-  // },
   {
     href: "https://twitter.com/yajium_",
     icon: <SlSocialTwitter />,

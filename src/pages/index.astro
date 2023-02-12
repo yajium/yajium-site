@@ -18,9 +18,15 @@ const cards = [
     href: "blog",
   },
 ];
+const title = "yajium's site";
+const desc = `こんにちは、yajiumです。
+  ここまで見に来てくださり、ありがとうございます。今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。
+  最近の趣味はTwitterでパグを見て癒されることです。\n今の目標はソフトウェアエンジニアになることで、それに向けて毎日少しずつ勉強を頑張っています。
+  Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。
+  海が好きなので、このサイトは海底をイメージしてデザインしました。`;
 ---
 
-<BaseLayout isHome>
+<BaseLayout title={title} iconHeadline={title} desc={desc} isHome>
   <div class="cards">
     {
       cards.map((c) => (
@@ -43,11 +49,25 @@ const cards = [
   .card {
     @apply rounded-3xl px-6 py-3;
     background-color: #e5dcdc;
+    animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
   .card h2 {
     @apply text-3xl font-bold mb-2 flex;
     color: #315d86;
     justify-content: space-between;
+  }
+  @keyframes fadeup {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .card p {
     @apply my-6;

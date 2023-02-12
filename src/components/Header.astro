@@ -1,14 +1,19 @@
 ---
-import { SITE_TITLE } from "../consts";
-import ToolLinks from "./ToolLinks";
+import Navigation from "src/ui/Humbarger";
+
+type Props = {
+  iconHeadline?: string;
+  desc?: string;
+  isHome?: boolean;
+};
+const { iconHeadline, desc, isHome } = Astro.props;
 ---
 
 <header>
   <div class="icon-header">
     <img src="/rorisu.png" width={120} height={120} />
-    <h2>
-      {SITE_TITLE}
-    </h2>
+    {iconHeadline && <h2>{iconHeadline}</h2>}
+    {!isHome && desc && <p>{desc}</p>}
   </div>
 </header>
 
@@ -21,13 +26,9 @@ import ToolLinks from "./ToolLinks";
   }
   .icon-header h2 {
     color: #e5dcdc;
-    @apply font-medium text-xl text-center mt-6;
+    @apply font-medium text-2xl text-center mt-6 mb-3;
   }
-  .my-desc {
-    @apply hidden mx-4 my-4 md:block;
-  }
-
-  .my-desc p {
+  .icon-header p {
     @apply text-sm;
     color: #b0a6a6;
   }

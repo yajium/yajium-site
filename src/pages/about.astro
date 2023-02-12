@@ -1,0 +1,148 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const links = [
+  {
+    linkTitle: "Twitter",
+    name: "yajium_",
+    link: "https://twitter.com/yajium_",
+  },
+  {
+    linkTitle: "Github",
+    name: "yajium",
+    link: "https://github.com/yajium",
+  },
+  {
+    linkTitle: "Zenn",
+    name: "rorisutarou",
+    link: "https://zenn.dev/rorisutarou",
+  },
+  {
+    linkTitle: "SpeakerDeck",
+    name: "aaa",
+    link: "xxx",
+  },
+];
+
+const likes = [
+  {
+    cate: "Tech",
+    detail: ["React", "Next.js", "Typescript", "C#"],
+  },
+  {
+    cate: "Hobby",
+    detail: ["Hikikomori"],
+  },
+  {
+    cate: "Music",
+    detail: ["ヨルシカ"],
+  },
+  {
+    cate: "Others",
+    detail: ["ぬいぐるみ", "ポケモン", "パグちゃん", "冬"],
+  },
+];
+
+const life = [
+  {
+    date: "2022/4~",
+    detail: "某社で社会人",
+  },
+  {
+    date: "2018/4~",
+    detail: "某塾で大学生",
+  },
+  {
+    date: "1999/7~",
+    detail: "某所で誕生",
+  },
+];
+---
+
+<BaseLayout
+  title={"yajiumについて"}
+  iconHeadline={"yajium"}
+  desc={"ぬいぐるみと一緒にふわふわ生活"}
+>
+  <div class="cards">
+    <div class="card">
+      <h2>Links</h2>
+      {
+        links.map((l) => (
+          <div class="link">
+            <p>{l.linkTitle}</p>
+            <a href={l.link}>{`@${l.name}`}</a>
+          </div>
+        ))
+      }
+    </div>
+    <div class="card">
+      <h2>Likes</h2>
+      {
+        likes.map((l) => (
+          <div class="like">
+            <p class="cate">{l.cate}</p>
+            <p>{l.detail.join(",")}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="card">
+      <h2>Life</h2>
+      {
+        life.map((l) => (
+          <div class="life">
+            <p class="date">{l.date}</p>
+            <p>{l.detail}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .cards {
+    @apply grid grid-rows-1 gap-6 mx-8 my-auto lg:basis-1/2;
+  }
+  .card {
+    @apply rounded-3xl text-sm px-10 py-4;
+    background-color: #e5dcdc;
+    animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  }
+  .card h2 {
+    @apply text-xl md:text-2xl font-bold mb-2 flex;
+    justify-content: space-between;
+  }
+  @keyframes fadeup {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .link {
+    @apply grid grid-cols-2 gap-0 my-2 md:text-base md:font-medium;
+  }
+  .link p {
+    color: #315d86;
+  }
+  .like {
+    @apply my-4 md:text-base md:font-medium;
+  }
+  .cate {
+    color: #315d86;
+  }
+  .life {
+    @apply my-4 grid grid-cols-2 gap-0 md:text-base md:font-medium;
+  }
+  .date {
+    color: #315d86;
+  }
+</style>
