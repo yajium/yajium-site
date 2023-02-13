@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const links = [
   {
@@ -70,9 +69,9 @@ const life = [
       <h2>Links</h2>
       {
         links.map((l) => (
-          <div class="link">
+          <div class="sns-link">
             <p>{l.linkTitle}</p>
-            <a href={l.link}>{`@${l.name}`}</a>
+            <a href={l.link} class="link">{`@${l.name}`}</a>
           </div>
         ))
       }
@@ -104,10 +103,10 @@ const life = [
 
 <style>
   .cards {
-    @apply grid grid-rows-1 gap-6 mx-8 my-auto lg:basis-1/2;
+    @apply grid grid-rows-1 gap-4 mt-8 mx-8 my-auto lg:basis-1/2;
   }
   .card {
-    @apply rounded-3xl text-sm px-10 py-4;
+    @apply rounded-3xl text-sm px-12 py-4;
     background-color: #e5dcdc;
     animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
@@ -128,20 +127,20 @@ const life = [
       transform: translateY(0);
     }
   }
-  .link {
+  .sns-link {
     @apply grid grid-cols-2 gap-0 my-2 md:text-base md:font-medium;
   }
-  .link p {
+  .sns-link p {
     color: #315d86;
   }
   .like {
-    @apply my-4 md:text-base md:font-medium;
+    @apply my-3 md:text-base md:font-medium;
   }
   .cate {
     color: #315d86;
   }
   .life {
-    @apply my-4 grid grid-cols-2 gap-0 md:text-base md:font-medium;
+    @apply my-3 grid grid-cols-2 gap-0 md:text-base md:font-medium;
   }
   .date {
     color: #315d86;

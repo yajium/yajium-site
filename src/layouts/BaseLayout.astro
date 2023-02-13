@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Sidebar from "@components/Sidebar.astro";
-import NavigationMenu from "@components/NavigationMenu.tsx";
+import NavigationMenu from "@components/NavigationMenu";
 import Navigation from "@components/Navigation.astro";
 
 type Props = {
@@ -27,8 +27,8 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
   </head>
 
   <body>
-    <Navigation />
-    <NavigationMenu client:load />
+    <Navigation isHome={isHome} />
+    <NavigationMenu />
     <Header iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
     <main>
       <div class="contents">

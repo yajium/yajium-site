@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 
 const cards = [
   {
@@ -21,7 +22,8 @@ const cards = [
 const title = "yajium's site";
 const desc = `こんにちは、yajiumです。
   ここまで見に来てくださり、ありがとうございます。今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。
-  最近の趣味はTwitterでパグを見て癒されることです。\n今の目標はソフトウェアエンジニアになることで、それに向けて毎日少しずつ勉強を頑張っています。
+  最近の趣味はTwitterでパグを見て癒されることです。
+  今の目標はソフトウェアエンジニアになることで、それに向けて毎日少しずつ勉強を頑張っています。
   Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。
   海が好きなので、このサイトは海底をイメージしてデザインしました。`;
 ---
@@ -32,10 +34,13 @@ const desc = `こんにちは、yajiumです。
       cards.map((c) => (
         <a href={c.href} class="card">
           <p>{c.description}</p>
-          <h2>
-            {c.itemName}
+          <div class="label">
+            <h2>
+              {c.itemName}
+              <i class="gg-search-loading" />
+            </h2>
             <img src="/rorisu_tasogare.png" width={30} height={20} />
-          </h2>
+          </div>
         </a>
       ))
     }
@@ -54,7 +59,9 @@ const desc = `こんにちは、yajiumです。
   .card h2 {
     @apply text-3xl font-bold mb-2 flex;
     color: #315d86;
-    justify-content: space-between;
+  }
+  .label {
+    @apply flex;
   }
   @keyframes fadeup {
     0% {
@@ -76,5 +83,40 @@ const desc = `こんにちは、yajiumです。
     font-size: 13px;
     line-height: 19px;
     color: #454242;
+  }
+  .gg-search-loading {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 16px;
+    height: 16px;
+    border: 2px solid;
+    border-radius: 100%;
+    margin-left: 10px;
+    margin-top: 11px;
+  }
+  .gg-search-loading::after,
+  .gg-search-loading::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 2px;
+    background: currentColor;
+  }
+  .gg-search-loading::after {
+    border-radius: 3px;
+    height: 8px;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 12px;
+  }
+  .gg-search-loading::before {
+    height: 2px;
+    border-radius: 100%;
+    top: 5px;
+    left: 5px;
+    box-shadow: -3px 0 0, 3px 0 0;
   }
 </style>

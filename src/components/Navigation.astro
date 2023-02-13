@@ -17,11 +17,23 @@ const links = [
     link: "/blog",
   },
 ];
+
+type Props = {
+  isHome?: boolean;
+};
+
+const { isHome } = Astro.props;
 ---
 
-<nav>
-  {links.map((l) => <a href={l.link}>{l.title}</a>)}
-</nav>
+{
+  !isHome && (
+    <nav>
+      {links.map((l) => (
+        <a href={l.link}>{l.title}</a>
+      ))}
+    </nav>
+  )
+}
 
 <style>
   nav {

@@ -1,63 +1,65 @@
 import {
-  ChevronDoubleDownIcon,
-  ListBulletIcon,
+  HomeIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  GiftIcon,
+  PencilSquareIcon,
 } from "@heroicons/react/24/outline";
+
+const links = [
+  {
+    title: "Home",
+    link: "/",
+    icon: <HomeIcon class="h-4 w-4" />,
+  },
+  {
+    title: "About",
+    link: "/about",
+    icon: <ChatBubbleOvalLeftEllipsisIcon class="h-4 w-4" />,
+  },
+  {
+    title: "Works",
+    link: "/works",
+    icon: <GiftIcon class="h-4 w-4" />,
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+    icon: <PencilSquareIcon class="h-4 w-4" />,
+  },
+];
 
 const NavigationMenu = () => {
   return (
-    <nav className="px-4 py-4 flex justify-end lg:hidden">
-      <button
-        id="dropdownHoverButton"
-        data-dropdown-toggle="dropdownHover"
-        data-dropdown-trigger="hover"
-        className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
-      >
-        <ListBulletIcon className="h-10 w-10 text-stone-300" />
-      </button>
-      <div
-        id="dropdownHover"
-        className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-      >
-        <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdownHoverButton"
+    <div className="dropdown dropdown-bottom dropdown-end flex justify-end lg:hidden">
+      <button className="mx-5 my-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          className="inline-block text-stone-200/75 w-8 h-8 stroke-current"
         >
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Dashboard
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+      <ul
+        tabIndex={0}
+        className="dropdown-content menu p-2 grid grid-cols-1 shadow bg-stone-400/30 rounded-box w-36 h-60 text-stone-100/90 text-base mr-4"
+      >
+        {links.map((l) => (
+          <li className="gap-1">
+            <a href={l.link} className="hover:bg-inherit">
+              {l.icon}
+              {l.title}
             </a>
           </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Settings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Earnings
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Sign out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        ))}
+      </ul>
+    </div>
   );
 };
 
