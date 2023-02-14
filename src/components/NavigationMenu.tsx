@@ -9,22 +9,22 @@ const links = [
   {
     title: "Home",
     link: "/",
-    icon: <HomeIcon class="h-4 w-4" />,
+    icon: <HomeIcon className="h-4 w-4" />,
   },
   {
     title: "About",
     link: "/about",
-    icon: <ChatBubbleOvalLeftEllipsisIcon class="h-4 w-4" />,
+    icon: <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4" />,
   },
   {
     title: "Works",
     link: "/works",
-    icon: <GiftIcon class="h-4 w-4" />,
+    icon: <GiftIcon className="h-4 w-4" />,
   },
   {
     title: "Blog",
     link: "/blog",
-    icon: <PencilSquareIcon class="h-4 w-4" />,
+    icon: <PencilSquareIcon className="h-4 w-4" />,
   },
 ];
 
@@ -51,7 +51,7 @@ const NavigationMenu = () => {
         className="dropdown-content menu p-2 grid grid-cols-1 shadow bg-stone-400/30 rounded-box w-36 h-60 text-stone-100/90 text-base mr-4"
       >
         {links.map((l) => (
-          <li className="gap-1">
+          <li className="gap-1" key={l.title}>
             <a href={l.link} className="hover:bg-inherit">
               {l.icon}
               {l.title}
