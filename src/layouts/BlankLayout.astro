@@ -1,20 +1,15 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION } from "../consts";
-import Sidebar from "@components/Sidebar.astro";
 import NavigationMenu from "@components/ui/NavigationMenu";
 import Navigation from "@components/ui/Navigation.astro";
 
 type Props = {
   title: string;
-  iconHeadline?: string;
-  desc?: string;
-  isHome?: boolean;
 };
 
-const { title, iconHeadline, desc, isHome } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <html lang="ja">
@@ -27,12 +22,10 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
   </head>
 
   <body>
-    <Navigation isHome={isHome} />
+    <Navigation />
     <NavigationMenu />
-    <Header iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
     <main>
       <div class="contents">
-        <Sidebar iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
         <slot />
       </div>
     </main>
@@ -40,9 +33,6 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
     <style>
       main {
         @apply container mx-auto my-auto;
-      }
-      .contents {
-        @apply flex justify-center;
       }
     </style>
   </body>

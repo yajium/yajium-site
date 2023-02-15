@@ -1,0 +1,82 @@
+---
+import Card from "@components/ui/card";
+import BlankLayout from "@layouts/BlankLayout.astro";
+
+const links = [
+  {
+    linkTitle: "Twitter",
+    name: "yajium_",
+    link: "https://twitter.com/yajium_",
+  },
+  {
+    linkTitle: "Github",
+    name: "yajium",
+    link: "https://github.com/yajium",
+  },
+  {
+    linkTitle: "Zenn",
+    name: "rorisutarou",
+    link: "https://zenn.dev/rorisutarou",
+  },
+  {
+    linkTitle: "SpeakerDeck",
+    name: "aaa",
+    link: "xxx",
+  },
+];
+
+const likes = [
+  {
+    cate: "Tech",
+    detail: ["React", "Next.js", "Typescript", "C#"],
+  },
+  {
+    cate: "Hobby",
+    detail: ["Hikikomori"],
+  },
+  {
+    cate: "Music",
+    detail: ["ヨルシカ"],
+  },
+  {
+    cate: "Others",
+    detail: ["ぬいぐるみ", "ポケモン", "パグちゃん", "冬"],
+  },
+];
+
+const life = [
+  {
+    date: "2022/4~",
+    detail: "某社で社会人",
+  },
+  {
+    date: "2018/4~",
+    detail: "某塾で大学生",
+  },
+  {
+    date: "1999/7~",
+    detail: "某所で誕生",
+  },
+];
+---
+
+<BlankLayout title="Worksをご紹介">
+  <div class="content">
+    <div class="head">
+      <h2>Works</h2>
+    </div>
+    <div class="cards">
+      <Card />
+    </div>
+  </div>
+</BlankLayout>
+
+<style>
+  .head h2 {
+    @apply text-4xl text-center my-10;
+    color: #e5dcdc;
+  }
+  .cards {
+    @apply flex flex-col place-items-center;
+  }
+</style>
