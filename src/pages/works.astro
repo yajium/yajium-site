@@ -1,23 +1,7 @@
 ---
 import Card from "@components/ui/card";
 import BlankLayout from "@layouts/BlankLayout.astro";
-
-const cards = [
-  {
-    image: "/poketto.png",
-    link: "https://poketto-mon.vercel.app/",
-    title: "Poketto",
-    desc: "好きなポケモンをシェアできるアプリ",
-    stack: ["React", "Next.js", "Firebase"],
-  },
-  {
-    image: "/yajium-blog.png",
-    link: "https://chiisanaumi.vercel.app/",
-    title: "Blog",
-    desc: "始めて作ったブログ",
-    stack: ["React", "Next.js"],
-  },
-];
+import { worksCards } from "src/constants/constant";
 ---
 
 <BlankLayout title="Worksをご紹介">
@@ -27,7 +11,7 @@ const cards = [
     </div>
     <div class="cards">
       {
-        cards.map((c) => (
+        worksCards.map((c) => (
           <Card
             image={c.image}
             link={c.link}

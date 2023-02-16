@@ -90,3 +90,20 @@ export const homeDesc = `こんにちは、yajiumです。
   Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。
 
   海と桜が好きなので、このサイトのデザインに要素を散りばめました🐳`;
+
+export const worksCards = [
+  {
+    image: "/yajium-blog.png",
+    link: "https://chiisanaumi.vercel.app/",
+    title: "Blog",
+    desc: "初めて作ったブログ",
+    stack: ["React", "Next.js"],
+  },
+  {
+    image: "/poketto.png",
+    link: "https://poketto-mon.vercel.app/",
+    title: "Poketto",
+    desc: "好きなポケモンをシェアできるアプリ",
+    stack: ["React", "Next.js", "Firebase"],
+  },
+];

@@ -48,7 +48,7 @@ const NavigationMenu = () => {
       </button>
       <ul
         tabIndex={0}
-        className="dropdown-content menu p-2 grid grid-cols-1 shadow bg-stone-400/30 rounded-box w-36 h-60 text-stone-100/90 text-base mr-4"
+        className="dropdown-content menu p-2 grid grid-cols-1 shadow bg-stone-400/30 rounded-box w-36 h-60 text-white font-medium text-lg mr-4"
       >
         {links.map((l) => (
           <li className="gap-1" key={l.title}>
