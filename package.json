@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:3000",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,15 +13,21 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.15.1",
+    "@astrojs/netlify": "^2.1.2",
     "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@heroicons/react": "^2.0.15",
-    "astro": "^2.0.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "astro": "^2.0.14",
     "daisyui": "^2.50.0",
     "microcms-js-sdk": "^2.3.2",
     "react-icons": "^4.7.1",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "zenn-content-css": "^0.1.140",
+    "zenn-embed-elements": "^0.1.140",
+    "zenn-markdown-html": "^0.1.140"
   },
   "devDependencies": {
     "@astrojs/react": "^2.0.2",
