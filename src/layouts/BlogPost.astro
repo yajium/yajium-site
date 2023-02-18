@@ -1,47 +1,70 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import "zenn-content-css";
+import { SITE_DESCRIPTION } from "src/constants/constant";
+import NavigationMenu from "@components/ui/NavigationMenu";
+import Navigation from "@components/ui/Navigation.astro";
+import { getDate } from "src/lib/post-info";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"article">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, tags } = Astro.props;
+const pubFormatedDate = getDate(pubDate);
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-		</style>
-	</head>
+<html lang="ja">
+  <head>
+    <BaseHead title={title} description={SITE_DESCRIPTION} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://embed.zenn.studio/js/listen-embed-event.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Last updated on <time>{updatedDate}</time>
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Navigation />
+    <NavigationMenu />
+    <main>
+      <article>
+        <div class="head">
+          {pubDate && <time>{pubFormatedDate}</time>}
+          <div class="post-head">
+            <h1 class="title">{title}</h1>
+            <ul>{tags.map((t) => <li class="tag">{`#${t}`}</li>)}</ul>
+          </div>
+        </div>
+        <slot />
+      </article>
+    </main>
+    <Footer />
+    <style>
+      main {
+        @apply container mx-auto my-auto;
+      }
+      article {
+        @apply my-8;
+      }
+      .head {
+        @apply text-sm sm:text-xl text-beige px-6 py-2;
+      }
+      .title {
+        @apply text-xl sm:text-3xl text-beige font-medium;
+      }
+      .post-head {
+        @apply mt-4;
+      }
+      .post-head ul {
+        @apply my-3 self-end flex sm:flex-none;
+      }
+      .tag {
+        @apply text-base sm:text-xl bg-red-400/60 text-white rounded-md mx-1 my-2 px-2 py-0.5;
+      }
+    </style>
+  </body>
 </html>
