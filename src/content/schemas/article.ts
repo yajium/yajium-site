@@ -8,6 +8,7 @@ export const articleSchema = z.object({
     .string()
     .or(z.date())
     .transform((val) => new Date(val)),
+  pubFromatedDate: z.string().optional(),
   // updatedDate: z
   //   .string()
   //   .optional()

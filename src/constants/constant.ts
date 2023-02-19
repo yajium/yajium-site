@@ -17,11 +17,11 @@ export const snslinks = [
     name: "rorisutarou",
     link: "https://zenn.dev/rorisutarou",
   },
-  {
-    linkTitle: "SpeakerDeck",
-    name: "aaa",
-    link: "xxx",
-  },
+  // {
+  //   linkTitle: "SpeakerDeck",
+  //   name: "aaa",
+  //   link: "xxx",
+  // },
 ];
 
 export const myLikes = [
@@ -31,7 +31,7 @@ export const myLikes = [
   },
   {
     cate: "Hobby",
-    detail: ["Hikikomori"],
+    detail: ["引きこもり", "ポケモンの対戦実況を見ること"],
   },
   {
     cate: "Music",
@@ -66,12 +66,12 @@ export const homeCards = [
   },
   {
     itemName: "Works",
-    description: "へんてこな作ったものたちを紹介しています",
+    description: "作ったものたちを紹介しています",
     href: "/works",
   },
   {
     itemName: "Blog",
-    description: "頑張って文字を書いています",
+    description: "文字を書いています",
     href: "blog",
   },
 ];
@@ -81,29 +81,27 @@ export const homeTitle = "yajium's site";
 export const homeDesc = `こんにちは、yajiumです。
   ここまで見に来てくださり、ありがとうございます。
 
-  ___以下読まなくて大丈夫です___
-
   今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。
   最近の趣味はTwitterでパグを見て癒されることです。
 
   今の目標はソフトウェアエンジニアになることで、その目標に向けて日々を生きています。
   Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。
 
-  海と桜が好きなので、このサイトのデザインに要素を散りばめました🐳`;
+  海と桜が好きなので、このサイトのデザインに要素を散りばめてみました🐳`;
 
 export const worksCards = [
-  {
-    image: "/yajium-blog.png",
-    link: "https://chiisanaumi.vercel.app/",
-    title: "Blog",
-    desc: "初めて作ったブログ",
-    stack: ["React", "Next.js"],
-  },
   {
     image: "/poketto.png",
     link: "https://poketto-mon.vercel.app/",
     title: "Poketto",
     desc: "好きなポケモンをシェアできるアプリ",
     stack: ["React", "Next.js", "Firebase"],
+  },
+  {
+    image: "/yajium-blog.png",
+    link: "https://chiisanaumi.vercel.app/",
+    title: "Blog",
+    desc: "初めて作ったブログ",
+    stack: ["React", "Next.js"],
   },
 ];
