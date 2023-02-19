@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../../layouts/BlogPost.astro";
+import BlogPostLayout from "../../../layouts/BlogPostLayout.astro";
 import PostBody from "@components/util/PostBody";
 import markdownToHtml from "zenn-markdown-html";
 
@@ -21,6 +21,16 @@ type Props = CollectionEntry<"article">;
 const post = Astro.props;
 ---
 
-<BlogPost {...post.data} title={post.data.title}>
+<BlogPostLayout
+  {...post.data}
+  title={post.data.title}
+  iconHeadline="yajium"
+  desc="興味散漫"
+>
   <PostBody content={post.body} />
-</BlogPost>
+  <a
+    href="/blog/article"
+    class="btn btn-error bg-error/95 pr-6 text-white font-medium fixed bottom-10 left-6 lg:left-10"
+    >👈 back</a
+  >
+</BlogPostLayout>

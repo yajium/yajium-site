@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { myLife, myLikes, snslinks } from "src/constants/constant";
+
+const title = "yajiumについて";
+const iconHeadline = "yajium";
+const desc = "ぬいぐるみと一緒にふわふわ生活";
 ---
 
-<BaseLayout
-  title={"yajiumについて"}
-  iconHeadline={"yajium"}
-  desc={"ぬいぐるみと一緒にふわふわ生活"}
->
+<BaseLayout title={title} iconHeadline={iconHeadline} desc={desc}>
   <div class="cards">
     <div class="card">
       <h2>Links</h2>
@@ -78,7 +78,7 @@ import { myLife, myLikes, snslinks } from "src/constants/constant";
     color: #315d86;
   }
   .sns-link a:hover {
-    color: #d46b9d;
+    @apply text-error;
   }
   .like {
     @apply my-3 md:text-base md:font-medium;

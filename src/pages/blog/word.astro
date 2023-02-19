@@ -12,9 +12,9 @@ const posts = (await getCollection("article")).sort(
 );
 ---
 
-<TabLayout tabCategory="note">
+<TabLayout tabCategory="word">
   <div class="desc">
-    <p>雑メモです</p>
+    <p>素敵だなと思った言葉をメモします</p>
   </div>
   <div class="articles">
     <p>準備中</p>
@@ -23,7 +23,7 @@ const posts = (await getCollection("article")).sort(
 
 <style>
   .articles {
-    @apply bg-beige rounded-lg my-4 py-3 px-6;
+    @apply bg-beige rounded-lg my-6 py-3 px-6;
   }
   .articles p {
     @apply px-32 lg:px-48 py-20;
