@@ -2,14 +2,9 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogPostLayout from "../../../layouts/BlogPostLayout.astro";
 import PostBody from "@components/util/PostBody";
-import markdownToHtml from "zenn-markdown-html";
 
 export async function getStaticPaths() {
   const posts = await getCollection("article");
-
-  posts.forEach((p) => {
-    p.body = markdownToHtml(p.body);
-  });
 
   return posts.map((post) => ({
     params: { slug: post.slug },
