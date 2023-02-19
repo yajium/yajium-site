@@ -6,10 +6,6 @@ import { getDate } from "src/lib/post-info";
 (await getCollection("article")).forEach(
   (p) => (p.data.pubFromatedDate = getDate(p.data.pubDate))
 );
-
-const posts = (await getCollection("article")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
 ---
 
 <TabLayout tabCategory="note">
