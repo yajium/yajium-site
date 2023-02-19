@@ -1,0 +1,68 @@
+---
+import BlankLayout from "@layouts/BlankLayout.astro";
+
+type Props = {
+  tabCategory: string;
+};
+
+const { tabCategory } = Astro.props;
+
+let articleActive = "";
+let noteActive = "";
+let wordActive = "";
+switch (tabCategory) {
+  case "article":
+    articleActive = "tab-active";
+    break;
+  case "note":
+    noteActive = "tab-active";
+    break;
+  case "word":
+    wordActive = "tab-active";
+    break;
+}
+---
+
+<BlankLayout title="記事">
+  <div class="content">
+    <div class="head">
+      <h2>Blog</h2>
+    </div>
+    <div class="tabs">
+      <a href="/blog/article" class={`tab tab-lg tab-bordered ${articleActive}`}
+        >記事</a
+      >
+      <a href="/blog/note" class={`tab tab-lg tab-bordered ${noteActive}`}
+        >備忘録</a
+      >
+      <a href="/blog/word" class={`tab tab-lg tab-bordered ${wordActive}`}
+        >言葉</a
+      >
+    </div>
+    <slot />
+  </div>
+</BlankLayout>
+
+<style>
+  .content {
+    @apply flex flex-col place-items-center mx-4;
+  }
+  .head h2 {
+    @apply text-4xl text-center my-10 text-beige;
+  }
+  .tabs {
+    @apply text-white;
+  }
+  .tab {
+    @apply text-beige/70 text-xl;
+  }
+  .tab-active {
+    @apply text-beige;
+  }
+  .tab-bordered {
+    @apply border-beige/40 border-b-4;
+  }
+  .tab-bordered.tab-active {
+    @apply border-beige;
+  }
+</style>

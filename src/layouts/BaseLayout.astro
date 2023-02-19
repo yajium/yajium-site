@@ -32,7 +32,7 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
     <Header iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
     <main>
       <div class="contents">
-        <Sidebar iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
+        <Sidebar iconHeadline={iconHeadline} desc={desc} />
         <slot />
       </div>
     </main>
