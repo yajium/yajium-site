@@ -2,9 +2,8 @@
 type Props = {
   iconHeadline?: string;
   desc?: string;
-  isHome?: boolean;
 };
-const { iconHeadline, desc, isHome } = Astro.props;
+const { iconHeadline, desc } = Astro.props;
 ---
 
 <div class="side-bar">
@@ -23,17 +22,17 @@ const { iconHeadline, desc, isHome } = Astro.props;
 
 <style>
   .side-bar {
-    @apply px-6 mt-4 hidden lg:block lg:basis-1/4;
+    @apply px-6 py-4 mt-4 hidden lg:block lg:basis-1/4 sticky top-0;
   }
   .icon-head {
-    @apply grid;
+    @apply grid justify-items-center;
   }
   .icon-head h2 {
     color: #e5dcdc;
     @apply font-medium text-xl mt-6;
   }
   .my-desc {
-    @apply hidden my-4 md:block;
+    @apply hidden my-4 md:block text-center;
   }
 
   .my-desc p {
