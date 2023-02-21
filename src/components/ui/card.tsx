@@ -8,7 +8,11 @@ type Props = {
 
 const Card = (props: Props) => {
   return (
-    <a href={props.link} className="card w-auto mb-6 bg-beige shadow-xl">
+    <a
+      href={props.link}
+      target="_blank"
+      className="card w-auto mb-6 bg-beige shadow-xl"
+    >
       <figure className="bg-white">
         <img
           src={props.image}

@@ -1,5 +1,7 @@
 export const SITE_TITLE = "yajium's site";
-export const SITE_DESCRIPTION = "おはこんちゃろ";
+export const SITE_DESCRIPTION = "yajiumのホームページです";
+export const NAME = "yajium";
+export const SHORT_INTRO = "こんにちは";
 
 export const snslinks = [
   {
