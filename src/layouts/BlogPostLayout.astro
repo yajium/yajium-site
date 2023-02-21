@@ -3,24 +3,21 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import "zenn-content-css";
-import { SITE_DESCRIPTION } from "src/constants/constant";
 import NavigationMenu from "@components/ui/NavigationMenu";
 import Navigation from "@components/ui/Navigation.astro";
 import { getDate } from "src/lib/post-info";
 import Sidebar from "@components/Sidebar.astro";
+import { NAME, SHORT_INTRO } from "src/constants/constant";
 
-type Props = CollectionEntry<"article">["data"] & {
-  iconHeadline: string;
-  desc: string;
-};
+type Props = CollectionEntry<"article">["data"];
 
-const { title, pubDate, tags, iconHeadline, desc } = Astro.props;
+const { title, pubDate, tags } = Astro.props;
 const pubFormatedDate = getDate(pubDate);
 ---
 
 <html lang="ja">
   <head>
-    <BaseHead title={title} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={title} />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
       rel="stylesheet"
@@ -44,19 +41,19 @@ const pubFormatedDate = getDate(pubDate);
         <slot />
       </article>
       <div class="sidebar">
-        <Sidebar iconHeadline={iconHeadline} desc={desc} />
+        <Sidebar iconHeadline={NAME} desc={SHORT_INTRO} />
       </div>
     </main>
     <Footer />
     <style>
       main {
-        @apply container mx-auto my-auto flex-none lg:flex;
+        @apply container mx-auto max-w-screen-xl my-auto flex-none lg:flex;
       }
       .sidebar {
         @apply my-12 lg:basis-1/4 mx-4 text-center;
       }
       article {
-        @apply my-8 lg:basis-3/4;
+        @apply my-8 lg:basis-3/4 mx-5 sm:mx-10;
       }
       .head {
         @apply text-sm sm:text-xl text-beige px-6 py-2;

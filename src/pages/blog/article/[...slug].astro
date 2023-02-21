@@ -1,7 +1,7 @@
 ---
+import "zenn-content-css";
 import { CollectionEntry, getCollection } from "astro:content";
 import BlogPostLayout from "../../../layouts/BlogPostLayout.astro";
-import PostBody from "@components/util/PostBody";
 import lib from "zenn-markdown-html";
 
 // build時にそのまま使うとエラーになるため変更
@@ -19,20 +19,20 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"article">;
 const post = Astro.props;
 
-post.body = markdownToHtml(post.body);
-console.log(post.body);
+post.body = markdownToHtml(post.body, {
+  embedOrigin: "https://embed.zenn.studio",
+});
 ---
 
-<BlogPostLayout
-  {...post.data}
-  title={post.data.title}
-  iconHeadline="yajium"
-  desc="こんにちは"
->
-  <PostBody content={post.body} />
+<BlogPostLayout {...post.data} title={post.data.title}>
+  <div
+    class="znc px-8 py-6 sm:px-20 sm:py-20 text-sm sm:text-base sm:mx-auto rounded-3xl bg-beige"
+  >
+    <Fragment set:html={post.body} />
+  </div>
   <a
     href="/blog/article"
-    class="btn btn-error bg-error/95 pr-6 text-white font-medium fixed bottom-10 left-6 lg:left-10"
+    class="btn btn-error bg-error/95 pr-6 text-white font-medium fixed bottom-10 left-6 lg:left-20"
     >👈 back</a
   >
 </BlogPostLayout>
