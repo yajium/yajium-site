@@ -107,3 +107,11 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+:::message
+メッセージをここに
+:::
+
+https://zenn.dev/zenn/articles/markdown-guide
+
+https://github.com/octocat/Hello-World/blob/master/README
