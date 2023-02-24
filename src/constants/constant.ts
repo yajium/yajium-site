@@ -1,7 +1,12 @@
+import poketto from "../images/works/poketto.png";
+import yajiumBlog from "../images/works/yajium-blog.png";
+
 export const SITE_TITLE = "yajium's site";
 export const SITE_DESCRIPTION = "yajiumのホームページです";
 export const NAME = "yajium";
 export const SHORT_INTRO = "こんにちは";
+export const rorisuTasogareAlt = "たそがれロリス";
+export const rorisuAlt = "ロリス";
 
 export const snslinks = [
   {
@@ -33,7 +38,7 @@ export const myLikes = [
   },
   {
     cate: "Hobby",
-    detail: ["引きこもり", "ポケモンの対戦実況を見ること"],
+    detail: ["引きこもり", "ゲーム実況を見ること"],
   },
   {
     cate: "Music",
@@ -86,21 +91,18 @@ export const homeDesc = `こんにちは、yajiumです。
   今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。
   最近の趣味はTwitterでパグを見て癒されることです。
 
-  今の目標はソフトウェアエンジニアになることで、その目標に向けて日々を生きています。
-  Webの技術が好きで、最近はフロントエンドへの興味が強いです。ただ、仕事ではC#を触っていて主にバックエンドをやっています。
-
   海と桜が好きなので、このサイトのデザインに要素を散りばめてみました🐳`;
 
 export const worksCards = [
   {
-    image: "/src/images/works/poketto.png",
+    image: "/works/poketto.png",
     link: "https://poketto-mon.vercel.app/",
     title: "Poketto",
     desc: "好きなポケモンをシェアできるアプリ",
     stack: ["React", "Next.js", "Firebase"],
   },
   {
-    image: "/src/images/works/yajium-blog.png",
+    image: "/works/yajium-blog.png",
     link: "https://chiisanaumi.vercel.app/",
     title: "Blog",
     desc: "初めて作ったブログ",
