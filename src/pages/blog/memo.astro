@@ -1,0 +1,61 @@
+---
+import TabLayout from "@layouts/TabLayout.astro";
+import { getDate } from "src/lib/post-info";
+//microCMS呼び出し
+import { getMemos } from "../../lib/microcms";
+const res = await getMemos({ fields: ["createdAt", "title", "content"] });
+
+res.contents.forEach((m) => {
+  const date = new Date(m.createdAt);
+  m.createdAt = getDate(date);
+});
+---
+
+<TabLayout tabCategory="note">
+  <div class="desc">
+    <p>雑メモです</p>
+  </div>
+  <ul class="memos">
+    {
+      res.contents.map((m) => (
+        <li>
+          <div class="head">
+            <h1>{m.title}</h1>
+            <time>{m.createdAt}</time>
+          </div>
+          <div set:html={m.content} class="content" />
+        </li>
+      ))
+    }
+  </ul>
+</TabLayout>
+
+<style>
+  .desc {
+    @apply my-6 sm:my-8;
+  }
+  .desc p {
+    @apply text-sm text-beige/90;
+  }
+  .memos {
+    @apply grid grid-cols-1 gap-4 sm:mx-6 sm:w-1/2 xl:w-2/5;
+  }
+  .memos li {
+    @apply bg-beige rounded-3xl px-5 sm:px-8 py-6;
+  }
+  .head {
+    @apply text-center;
+  }
+  .head h1 {
+    @apply text-base sm:text-xl;
+  }
+  .head time {
+    @apply text-xs sm:text-sm text-error;
+  }
+  .content {
+    @apply mt-5 sm:mt-8 text-sm;
+  }
+  .content p {
+    @apply flex flex-col justify-center;
+  }
+</style>

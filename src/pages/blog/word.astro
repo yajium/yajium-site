@@ -3,31 +3,34 @@ import TabLayout from "@layouts/TabLayout.astro";
 import { getCollection } from "astro:content";
 import { getDate } from "src/lib/post-info";
 
-(await getCollection("article")).forEach(
-  (p) => (p.data.pubFromatedDate = getDate(p.data.pubDate))
-);
+//microCMS呼び出し
+import { getWords } from "../../lib/microcms";
+const res = await getWords({ fields: ["words"] });
 ---
 
 <TabLayout tabCategory="word">
   <div class="desc">
     <p>素敵だなと思った言葉をメモします</p>
   </div>
-  <div class="articles">
-    <p>準備中</p>
-  </div>
+  <ul class="words">
+    {
+      res.contents[0].words.length > 0 &&
+        res.contents[0].words.map((w) => <li>{w.word}</li>)
+    }
+  </ul>
 </TabLayout>
 
 <style>
-  .articles {
-    @apply bg-beige rounded-lg my-6 py-3 px-6;
-  }
-  .articles p {
-    @apply px-32 lg:px-48 py-20;
-  }
   .desc {
     @apply mt-8;
   }
   .desc p {
     @apply text-sm text-beige/90;
+  }
+  .words {
+    @apply my-6 sm:my-12 sm:mx-6 sm:max-w-xl;
+  }
+  .words li {
+    @apply inline-block text-sm sm:text-base bg-red-400/40 text-white rounded-3xl mx-1 my-2 px-3 pt-1 pb-1.5;
   }
 </style>
