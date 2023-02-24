@@ -1,8 +1,8 @@
 ---
-title: "もももも"
+title: "Markdownテスト"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "2023/02/18 13:00:22"
-tags: ["Tech", "Life"]
+tags: ["Tech"]
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
