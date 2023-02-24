@@ -14,7 +14,11 @@ import { homeCards, homeDesc, homeTitle } from "src/constants/constant";
               {c.itemName}
               <i class="gg-search-loading" />
             </h2>
-            <img src="/rorisu_tasogare.png" width={30} height={20} />
+            <img
+              src="/src/images/ui/rorisu_tasogare.png"
+              width={30}
+              height={20}
+            />
           </div>
         </a>
       ))
@@ -24,14 +28,14 @@ import { homeCards, homeDesc, homeTitle } from "src/constants/constant";
 
 <style>
   .cards {
-    @apply grid grid-rows-1 gap-8 lg:gap-11 mx-6 my-auto lg:basis-1/2;
+    @apply grid grid-rows-1 gap-8 lg:gap-11 my-auto lg:basis-1/2;
   }
   .card {
     @apply rounded-3xl px-6 py-3;
     background-color: #e5dcdc;
     animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
-  .card h2 {
+  .label h2 {
     @apply text-3xl font-bold mb-2 flex;
     color: #315d86;
   }
@@ -60,9 +64,9 @@ import { homeCards, homeDesc, homeTitle } from "src/constants/constant";
     color: #454242;
   }
   .gg-search-loading {
+    @apply hidden sm:block;
     box-sizing: border-box;
     position: relative;
-    display: block;
     transform: scale(var(--ggs, 1));
     width: 16px;
     height: 16px;

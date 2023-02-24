@@ -93,14 +93,14 @@ export const homeDesc = `こんにちは、yajiumです。
 
 export const worksCards = [
   {
-    image: "/poketto.png",
+    image: "/src/images/works/poketto.png",
     link: "https://poketto-mon.vercel.app/",
     title: "Poketto",
     desc: "好きなポケモンをシェアできるアプリ",
     stack: ["React", "Next.js", "Firebase"],
   },
   {
-    image: "/yajium-blog.png",
+    image: "/src/images/works/yajium-blog.png",
     link: "https://chiisanaumi.vercel.app/",
     title: "Blog",
     desc: "初めて作ったブログ",
