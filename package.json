@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/image": "^0.15.1",
     "@astrojs/mdx": "^0.15.1",
     "@astrojs/netlify": "^2.1.2",
     "@astrojs/rss": "^2.1.0",
