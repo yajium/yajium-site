@@ -9,9 +9,11 @@ res.contents.forEach((m) => {
   const date = new Date(m.createdAt);
   m.createdAt = getDate(date);
 });
+
+const title = "備忘録";
 ---
 
-<TabLayout tabCategory="note">
+<TabLayout tabCategory="note" title={title}>
   <div class="desc">
     <p>雑メモです</p>
   </div>

@@ -1,6 +1,8 @@
 ---
+import { Image } from "@astrojs/image/components";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { homeCards, homeDesc, homeTitle } from "src/constants/constant";
+import rorisuTasogare from "../images/ui/rorisu_tasogare.png";
 ---
 
 <BaseLayout title={homeTitle} iconHeadline={homeTitle} desc={homeDesc} isHome>
@@ -14,11 +16,7 @@ import { homeCards, homeDesc, homeTitle } from "src/constants/constant";
               {c.itemName}
               <i class="gg-search-loading" />
             </h2>
-            <img
-              src="/src/images/ui/rorisu_tasogare.png"
-              width={30}
-              height={20}
-            />
+            <Image src={rorisuTasogare} alt="" width={30} height={30} />
           </div>
         </a>
       ))

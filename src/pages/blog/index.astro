@@ -10,9 +10,11 @@ import { getDate } from "src/lib/post-info";
 const posts = (await getCollection("article")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const title = "記事";
 ---
 
-<TabLayout tabCategory="article">
+<TabLayout tabCategory="article" title={title}>
   <div class="articles">
     <ul>
       {

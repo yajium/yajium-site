@@ -1,4 +1,8 @@
 ---
+import { Image } from "@astrojs/image/components";
+import { rorisuAlt } from "src/constants/constant";
+import rorisu from "../images/ui/rorisu.png";
+
 type Props = {
   iconHeadline?: string;
   desc?: string;
@@ -9,7 +13,7 @@ const { iconHeadline, desc, isHome } = Astro.props;
 
 <header>
   <div class="icon-header">
-    <img src="/src/images/ui/rorisu.png" width={120} height={120} />
+    <Image src={rorisu} width={120} height={120} alt={rorisuAlt} />
     {iconHeadline && <h2>{iconHeadline}</h2>}
     {!isHome && desc && <p>{desc}</p>}
   </div>

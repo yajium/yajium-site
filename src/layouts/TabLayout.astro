@@ -3,9 +3,10 @@ import BlankLayout from "@layouts/BlankLayout.astro";
 
 type Props = {
   tabCategory: string;
+  title: string;
 };
 
-const { tabCategory } = Astro.props;
+const { tabCategory, title } = Astro.props;
 
 let articleActive = "";
 let noteActive = "";
