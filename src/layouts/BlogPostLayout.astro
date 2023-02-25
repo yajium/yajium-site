@@ -7,7 +7,7 @@ import Navigation from "@components/ui/Navigation.astro";
 import { getDate } from "src/lib/post-info";
 import Sidebar from "@components/Sidebar.astro";
 import { NAME, SHORT_INTRO } from "src/constants/constant";
-import Collapse from "@components/ui/Collapse.astro";
+import NavigationMenu from "@components/ui/NavigationMenu.astro";
 
 type Props = CollectionEntry<"article">["data"];
 
@@ -28,7 +28,7 @@ const pubFormatedDate = getDate(pubDate);
 
   <body>
     <Navigation />
-    <Collapse />
+    <NavigationMenu />
     <main>
       <article>
         <div class="head">

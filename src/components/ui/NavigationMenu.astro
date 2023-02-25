@@ -1,0 +1,30 @@
+---
+const links = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+  {
+    title: "Works",
+    link: "/works",
+  },
+  {
+    title: "Blog",
+    link: "/blog",
+  },
+];
+---
+
+<nav>
+  {links.map((l) => <a href={l.link}>{l.title}</a>)}
+</nav>
+
+<style>
+  nav {
+    @apply grid grid-cols-4 justify-items-center sticky top-4 py-3 rounded-full mx-3 mt-3 mb-16 text-xs bg-navy/70 text-beige z-10 sm:hidden;
+  }
+</style>
