@@ -47,15 +47,15 @@ const desc = "平和が好きです";
 
 <style>
   .cards {
-    @apply grid grid-rows-1 gap-4 mt-8 mx-8 my-auto lg:basis-1/2;
+    @apply grid grid-rows-1 gap-4 mt-8 my-auto lg:basis-1/2;
   }
   .card {
-    @apply rounded-3xl text-sm px-12 py-4 max-w-2xl;
+    @apply rounded-3xl text-sm px-10 md:px-12 py-4 max-w-2xl;
     background-color: #e5dcdc;
     animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
   .card h2 {
-    @apply text-xl md:text-2xl font-bold mb-2 flex;
+    @apply text-xl md:text-2xl font-medium md:font-bold mb-2 flex;
     justify-content: space-between;
   }
   @keyframes fadeup {
