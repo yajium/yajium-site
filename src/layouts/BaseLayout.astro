@@ -6,6 +6,7 @@ import { SITE_DESCRIPTION } from "../constants/constant";
 import Sidebar from "@components/Sidebar.astro";
 import NavigationMenu from "@components/ui/NavigationMenu";
 import Navigation from "@components/ui/Navigation.astro";
+import Collapse from "@components/ui/Collapse.astro";
 
 type Props = {
   title: string;
@@ -28,7 +29,7 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
 
   <body>
     <Navigation isHome={isHome} />
-    <NavigationMenu />
+    <Collapse />
     <Header iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
     <main>
       <div class="contents">
