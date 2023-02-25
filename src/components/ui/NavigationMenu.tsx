@@ -30,13 +30,13 @@ const links = [
 
 const NavigationMenu = () => {
   return (
-    <div className="dropdown dropdown-bottom dropdown-end flex justify-end sticky top-0 bg-beige/20 lg:hidden z-10">
-      <button className="mx-5 my-5">
+    <div className="dropdown dropdown-bottom dropdown-end flex justify-end sticky top-0 bg-beige/20 sm:hidden z-10">
+      <button type="button" className="mx-2 my-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          className="inline-block text-error w-8 h-8 stroke-current"
+          className="inline-block text-red-300 w-6 h-6 stroke-current"
         >
           <path
             strokeLinecap="round"
@@ -48,11 +48,11 @@ const NavigationMenu = () => {
       </button>
       <ul
         tabIndex={0}
-        className="dropdown-content menu p-2 grid grid-cols-1 shadow bg-beige rounded-box w-36 h-60 text-navy font-semibold text-lg mt-3 mr-4"
+        className="dropdown-content menu p-1 grid grid-cols-4 shadow bg-beige rounded-box w-30 h-50 text-navy font-semibold text-base mx-2 my-2"
       >
         {links.map((l) => (
-          <li className="gap-1" key={l.title}>
-            <a href={l.link} className="hover:bg-inherit">
+          <li className="gap-0 py-4" key={l.title}>
+            <a href={l.link} className="hover:bg-inherit pl-3">
               {l.icon}
               {l.title}
             </a>

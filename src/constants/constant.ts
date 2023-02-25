@@ -1,6 +1,3 @@
-import poketto from "../images/works/poketto.png";
-import yajiumBlog from "../images/works/yajium-blog.png";
-
 export const SITE_TITLE = "yajium's site";
 export const SITE_DESCRIPTION = "yajiumのホームページです";
 export const NAME = "yajium";

@@ -22,8 +22,10 @@ const Card = (props: Props) => {
           className="object-cover h-32 sm:h-48"
         />
       </figure>
-      <div className="card-body py-6 text-navy text-center">
-        <h2 className="text-xl font-bold text-darkBlack">{props.title}</h2>
+      <div className="card-body py-4 sm:py-6 text-navy text-center">
+        <h2 className="text-base sm:text-xl font-bold text-darkBlack">
+          {props.title}
+        </h2>
         <p className="text-xs font-semibold">{props.desc}</p>
         <p className="text-xs mt-2">
           {props.stack.map((s) => (

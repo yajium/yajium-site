@@ -10,4 +10,5 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
 }
