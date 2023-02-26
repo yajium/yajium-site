@@ -17,14 +17,26 @@ const links = [
     link: "/blog",
   },
 ];
+
+type Props = {
+  isHome?: boolean;
+};
+
+const { isHome } = Astro.props;
 ---
 
-<nav>
-  {links.map((l) => <a href={l.link}>{l.title}</a>)}
-</nav>
+{
+  !isHome && (
+    <nav>
+      {links.map((l) => (
+        <a href={l.link}>{l.title}</a>
+      ))}
+    </nav>
+  )
+}
 
 <style>
   nav {
-    @apply grid grid-cols-4 justify-items-center sticky top-4 py-3 rounded-full mx-3 mt-3 mb-16 text-xs bg-navy/70 text-beige z-10 sm:hidden;
+    @apply grid grid-cols-4 justify-items-center sticky top-4 py-3 rounded-full mx-3 mt-3 mb-12 text-xs bg-navy/90 text-beige z-10 sm:hidden;
   }
 </style>

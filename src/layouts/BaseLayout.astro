@@ -28,7 +28,7 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
 
   <body>
     <Navigation isHome={isHome} />
-    <NavigationMenu />
+    <NavigationMenu isHome={isHome} />
     <Header iconHeadline={iconHeadline} desc={desc} isHome={isHome} />
     <main>
       <div class="contents">
