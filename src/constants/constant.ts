@@ -1,4 +1,4 @@
-export const SITE_TITLE = "yajium's site";
+export const SITE_TITLE = "yajium's website";
 export const SITE_DESCRIPTION = "yajiumのホームページです";
 export const NAME = "yajium";
 export const SHORT_INTRO = "こんにちは";
@@ -65,30 +65,26 @@ export const myLife = [
 export const homeCards = [
   {
     itemName: "About",
-    description: "yajiumのことを紹介しています",
+    description: "yajiumのこと",
     href: "/about",
   },
   {
     itemName: "Works",
-    description: "作ったものたちを紹介しています",
+    description: "いろいろ作ったものたち",
     href: "/works",
   },
   {
     itemName: "Blog",
-    description: "文字を書いています",
+    description: "記事を書いたり、日記を書いたり",
     href: "blog",
   },
 ];
 
-export const homeTitle = "yajium's site";
+export const homeTitle = "yajium";
 
-export const homeDesc = `こんにちは、yajiumです。
-  ここまで見に来てくださり、ありがとうございます。
+export const homeDesc = `ぬいぐるみが好きです
 
-  今は東京に住んでおり、毎日ぬいぐるみたちと穏やかに暮らしています。
-  最近の趣味はTwitterでパグを見て癒されることです。
-
-  海と桜が好きなので、このサイトのデザインに要素を散りばめてみました🐳`;
+目標はSoftwareEngineerになること！`;
 
 export const worksCards = [
   {
