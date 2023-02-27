@@ -4,7 +4,7 @@ import { myLife, myLikes, snslinks } from "src/constants/constant";
 
 const title = "yajiumについて";
 const iconHeadline = "yajium";
-const desc = "平和が好きです";
+const desc = "平和も好きです";
 ---
 
 <BaseLayout title={title} iconHeadline={iconHeadline} desc={desc}>
@@ -50,8 +50,7 @@ const desc = "平和が好きです";
     @apply grid grid-rows-1 gap-4 mt-8 my-auto lg:basis-1/2;
   }
   .card {
-    @apply rounded-3xl text-sm px-10 md:px-12 py-4 max-w-2xl;
-    background-color: #e5dcdc;
+    @apply rounded-3xl text-sm px-10 md:px-12 py-4 max-w-2xl border-2 bg-white/30;
     animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
   .card h2 {

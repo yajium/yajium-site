@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import { rorisuAlt } from "src/constants/constant";
-import rorisu from "../images/ui/rorisu.png";
+import namu from "../images/ui/namu.png";
 
 type Props = {
   iconHeadline?: string;
@@ -12,7 +12,7 @@ const { iconHeadline, desc } = Astro.props;
 
 <div class="side-bar">
   <div class="icon-head">
-    <Image src={rorisu} width={120} height={120} alt={rorisuAlt} />
+    <Image src={namu} width={140} height={120} alt={rorisuAlt} />
     {iconHeadline && <h2>{iconHeadline}</h2>}
   </div>
   {
