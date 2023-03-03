@@ -11,7 +11,7 @@ const Card = (props: Props) => {
     <a
       href={props.link}
       target="_blank"
-      className="card w-auto mb-6 border-2 bg-white/30 shadow-xl"
+      className="card w-auto mb-6 border-2 bg-white/60 shadow-xl"
     >
       <figure className="bg-white">
         <img
