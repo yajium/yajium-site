@@ -1,45 +1,53 @@
-import { SlSocialTwitter } from "react-icons/sl";
-import { SiZenn } from "react-icons/si";
+import { ImTwitter } from "react-icons/im";
+import { SiZenn, SiGithub } from "react-icons/si";
 import { RiGithubLine } from "react-icons/ri";
-import { TbMoodNeutral } from "react-icons/tb";
 import { IconContext } from "react-icons";
 
 const links = [
   {
-    href: "/",
-    icon: <TbMoodNeutral />,
-    isBlank: false,
+    href: "https://twitter.com/yajium_",
+    icon: <ImTwitter />,
+    isBlank: true,
+    color: "#1DA1F2",
+    size: 26,
+    title: "Twitter",
   },
   {
-    href: "https://twitter.com/yajium_",
-    icon: <SlSocialTwitter />,
+    href: "https://github.com/yajium",
+    icon: <SiGithub />,
     isBlank: true,
+    color: "#181717",
+    size: 26,
+    title: "Github",
   },
   {
     href: "https://zenn.dev/rorisutarou",
     icon: <SiZenn />,
     isBlank: true,
-  },
-  {
-    href: "https://github.com/yajium",
-    icon: <RiGithubLine />,
-    isBlank: true,
+    color: "#3EA8FF",
+    size: 22,
+    title: "Zenn",
   },
 ];
 
 const ToolLinks = () => {
   return (
-    <div className="flex justify-around">
+    <div className="flex gap-3 sm:gap-14">
       {links.map((item) => (
-        <IconContext.Provider value={{ color: "#f5faff", size: "33px" }}>
+        <IconContext.Provider
+          value={{ color: `${item.color}`, size: `${item.size}px` }}
+        >
           {item.isBlank ? (
-            <a rel="twitter" href="https://twitter.com/yajium_" target="_blank">
+            <a
+              href={item.href}
+              target="_blank"
+              className="flex gap-2 sm:gap-3 items-end py-3 pr-4 text-gray-500 link hover:text-error"
+            >
               {item.icon}
+              <p className="self-center">{item.title}</p>
             </a>
           ) : (
-            <a rel="twitter" href="https://twitter.com/yajium_">
-              {item.icon}
-            </a>
+            <a href={item.href}>{item.icon}</a>
           )}
         </IconContext.Provider>
       ))}

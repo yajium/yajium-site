@@ -8,24 +8,25 @@ export const rorisuAlt = "ロリス";
 export const snslinks = [
   {
     linkTitle: "Twitter",
-    name: "yajium_",
     link: "https://twitter.com/yajium_",
+    src: "https://s3.ap-northeast-1.amazonaws.com/wraptas-prod/noppe/1e42fa4a-df3d-4d4d-9be2-8462166034a5/b4bfc11b80a19b35355bc91ed0110e2a.png",
+    alt: "Twitter",
+    color: "3EA8FF",
   },
   {
     linkTitle: "Github",
-    name: "yajium",
     link: "https://github.com/yajium",
+    src: "https://s3.ap-northeast-1.amazonaws.com/wraptas-prod/noppe/1e42fa4a-df3d-4d4d-9be2-8462166034a5/b4bfc11b80a19b35355bc91ed0110e2a.png",
+    alt: "Twitter",
+    color: "3EA8FF",
   },
   {
     linkTitle: "Zenn",
-    name: "rorisutarou",
     link: "https://zenn.dev/rorisutarou",
+    src: "https://s3.ap-northeast-1.amazonaws.com/wraptas-prod/noppe/1e42fa4a-df3d-4d4d-9be2-8462166034a5/b4bfc11b80a19b35355bc91ed0110e2a.png",
+    alt: "Twitter",
+    color: "3EA8FF",
   },
-  // {
-  //   linkTitle: "SpeakerDeck",
-  //   name: "aaa",
-  //   link: "xxx",
-  // },
 ];
 
 export const myLikes = [
