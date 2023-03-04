@@ -1,6 +1,5 @@
-import { ImTwitter } from "react-icons/im";
-import { SiZenn, SiGithub } from "react-icons/si";
-import { RiGithubLine } from "react-icons/ri";
+import { ImTwitter } from "react-icons/im/index.js";
+import { SiZenn, SiGithub } from "react-icons/si/index.js";
 import { IconContext } from "react-icons";
 
 const links = [
