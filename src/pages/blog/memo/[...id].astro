@@ -1,0 +1,50 @@
+---
+import "zenn-content-css";
+import { CollectionEntry, getCollection } from "astro:content";
+import BlogPostLayout from "../../../layouts/BlogPostLayout.astro";
+import { getMemoDetail, getMemos } from "src/lib/microcms";
+import BlankLayout from "@layouts/BlankLayout.astro";
+import { getDate } from "src/lib/post-info";
+
+export async function getStaticPaths() {
+  const res = await getMemos({ fields: "id" });
+  return res.contents.map((content) => ({
+    params: { id: content.id },
+  }));
+}
+
+const { id } = Astro.params;
+const memo = await getMemoDetail(id as string);
+const date = new Date(memo.createdAt);
+memo.createdAt = getDate(date);
+---
+
+<BlankLayout title={memo.title}>
+  <div class="content">
+    <div class="head">
+      <time>{memo.createdAt}</time>
+      <h1>{memo.title}</h1>
+    </div>
+    <div set:html={memo.content} class="memo" />
+  </div>
+  <a
+    href="/blog/memo"
+    class="btn bg-navy/90 sm:pr-6 border-0 text-sm text-beige fixed bottom-10 left-4 lg:left-20 hover:bg-white hover:text-navy"
+    >👈 back</a
+  >
+</BlankLayout>
+
+<style>
+  .content {
+    @apply my-10 px-4 sm:px-10;
+  }
+  .head h1 {
+    @apply text-base sm:text-xl my-1;
+  }
+  .head time {
+    @apply text-sm sm:text-base text-navy;
+  }
+  .memo {
+    @apply py-10;
+  }
+</style>
