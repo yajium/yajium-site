@@ -1,4 +1,5 @@
 ---
+import ToolLinks from "@components/ui/ToolLinks";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { myLife, myLikes, snslinks } from "src/constants/constant";
 
@@ -11,14 +12,9 @@ const desc = "平和も好きです";
   <div class="cards">
     <div class="card">
       <h2>Links</h2>
-      {
-        snslinks.map((l) => (
-          <div class="sns-link">
-            <p>{l.linkTitle}</p>
-            <a href={l.link} target="_blanks" class="link">{`@${l.name}`}</a>
-          </div>
-        ))
-      }
+      <div class="sns-link">
+        <ToolLinks />
+      </div>
     </div>
     <div class="card">
       <h2>Likes</h2>
@@ -50,11 +46,11 @@ const desc = "平和も好きです";
     @apply grid grid-rows-1 gap-4 mt-8 my-auto lg:basis-1/2;
   }
   .card {
-    @apply rounded-3xl text-sm px-10 md:px-12 py-4 max-w-2xl border-2 bg-white;
+    @apply rounded-3xl text-sm px-10 md:px-12 py-4 max-w-2xl;
     animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   }
   .card h2 {
-    @apply text-xl md:text-2xl font-medium md:font-bold mb-2 flex;
+    @apply text-xl md:text-2xl font-medium md:font-bold flex;
     justify-content: space-between;
   }
   @keyframes fadeup {
@@ -71,13 +67,7 @@ const desc = "平和も好きです";
     }
   }
   .sns-link {
-    @apply grid grid-cols-2 gap-0 my-2 md:text-base md:font-medium;
-  }
-  .sns-link p {
-    color: #315d86;
-  }
-  .sns-link a:hover {
-    @apply text-error;
+    @apply grid grid-cols-3 gap-0 my-2 md:text-base md:font-medium;
   }
   .like {
     @apply my-3 md:text-base md:font-medium;
