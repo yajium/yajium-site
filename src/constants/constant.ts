@@ -3,7 +3,7 @@ export const SITE_DESCRIPTION = "yajiumのホームページです";
 export const NAME = "yajium";
 export const SHORT_INTRO = "こんにちは";
 export const rorisuTasogareAlt = "たそがれロリス";
-export const rorisuAlt = "ロリス";
+export const yajiumAlt = "yajium";
 
 export const snslinks = [
   {
