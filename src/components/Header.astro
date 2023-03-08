@@ -1,6 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
-import { rorisuAlt } from "src/constants/constant";
+import { yajiumAlt } from "src/constants/constant";
 import namu from "../images/ui/namu.png";
 
 type Props = {
@@ -13,7 +13,7 @@ const { iconHeadline, desc, isHome } = Astro.props;
 
 <header>
   <div class="icon-header">
-    <Image src={namu} width={120} height={100} alt={rorisuAlt} />
+    <Image src={namu} width={120} height={100} alt={yajiumAlt} />
     {iconHeadline && <h2>{iconHeadline}</h2>}
     <p>{desc}</p>
   </div>
