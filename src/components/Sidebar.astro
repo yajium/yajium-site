@@ -18,7 +18,7 @@ const { iconHeadline, desc } = Astro.props;
   {
     desc && (
       <div class="my-desc">
-        <p>{desc}</p>
+        <p class="text-sm whitespace-pre-line dark:text-white">{desc}</p>
       </div>
     )
   }
@@ -36,9 +36,5 @@ const { iconHeadline, desc } = Astro.props;
   }
   .my-desc {
     @apply hidden mt-14 md:block text-center;
-  }
-
-  .my-desc p {
-    @apply text-sm whitespace-pre-line text-navy;
   }
 </style>

@@ -1,4 +1,6 @@
 ---
+import ToggleDark from "./ToggleDark";
+
 const links = [
   {
     title: "Home",
@@ -25,21 +27,27 @@ type Props = {
 const { isHome } = Astro.props;
 ---
 
-{
-  !isHome && (
-    <nav>
-      {links.map((l) => (
-        <a href={l.link}>{l.title}</a>
-      ))}
-    </nav>
-  )
-}
+<nav>
+  {
+    !isHome && (
+      <div class="nav-menu">
+        {links.map((l) => (
+          <a href={l.link}>{l.title}</a>
+        ))}
+      </div>
+    )
+  }
+  <ToggleDark client:load />
+</nav>
 
 <style>
   nav {
-    @apply hidden sm:flex justify-center mx-auto;
+    @apply flex justify-end;
   }
-  nav a {
+  .nav-menu {
+    @apply hidden sm:flex dark:text-white dark:bg-white;
+  }
+  .nav-menu a {
     @apply mx-8 py-8 text-lg font-normal hover:underline hover:underline-offset-8 hover:decoration-2 hover:opacity-100 opacity-80;
   }
 </style>

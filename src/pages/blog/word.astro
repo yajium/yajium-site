@@ -14,10 +14,17 @@ const title = "素敵だなと思う言葉";
 
 <TabLayout tabCategory="word" title={title}>
   <div class="desc">
-    <p>素敵だなと思った言葉をメモします</p>
+    <p class="text-black/60 dark:text-gray-300">
+      素敵だなと思った言葉をメモします
+    </p>
   </div>
   <ul class="words">
-    {sortedWords && sortedWords.map((w) => <li>{w.word}</li>)}
+    {
+      sortedWords &&
+        sortedWords.map((w) => (
+          <li class="bg-white text-blue dark:text-blue-400">{w.word}</li>
+        ))
+    }
   </ul>
 </TabLayout>
 
@@ -26,12 +33,12 @@ const title = "素敵だなと思う言葉";
     @apply mt-8;
   }
   .desc p {
-    @apply text-sm text-black/60;
+    @apply text-sm;
   }
   .words {
     @apply my-6 sm:my-12 sm:mx-6 sm:max-w-xl;
   }
   .words li {
-    @apply inline-block text-sm sm:text-base border-2 bg-white text-navy rounded-3xl mx-1 my-2 px-3 pt-1 pb-1.5;
+    @apply inline-block text-sm sm:text-base border-2 rounded-3xl mx-1 my-2 px-3 pt-1 pb-1.5;
   }
 </style>
