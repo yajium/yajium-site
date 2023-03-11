@@ -13,13 +13,16 @@ let noteActive = "";
 let wordActive = "";
 switch (tabCategory) {
   case "article":
-    articleActive = "tab-active";
+    articleActive = "tab-active dark:text-white dark:border-white";
+    noteActive = wordActive = "dark:text-white/60 dark:border-white/40";
     break;
   case "memo":
-    noteActive = "tab-active";
+    noteActive = "tab-active dark:text-white dark:border-white";
+    articleActive = wordActive = "dark:text-white/60 dark:border-white/40";
     break;
   case "word":
-    wordActive = "tab-active";
+    wordActive = "tab-active dark:text-white dark:border-white";
+    articleActive = noteActive = "dark:text-white/60 dark:border-white/40";
     break;
 }
 ---
@@ -29,7 +32,7 @@ switch (tabCategory) {
     <div class="head">
       <h2>Blog</h2>
     </div>
-    <div class="tabs">
+    <div class="tabs text-base sm:text-xl">
       <a href="/blog/article" class={`tab tab-lg tab-bordered ${articleActive}`}
         >記事</a
       >
@@ -50,17 +53,5 @@ switch (tabCategory) {
   }
   .head h2 {
     @apply text-2xl sm:text-4xl text-center my-4 sm:my-10;
-  }
-  .tab {
-    @apply text-black/60 text-base sm:text-xl;
-  }
-  .tab-active {
-    @apply text-black;
-  }
-  .tab-bordered {
-    @apply border-black/40 border-b-2;
-  }
-  .tab-bordered.tab-active {
-    @apply border-black;
   }
 </style>

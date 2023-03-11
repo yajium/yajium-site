@@ -21,14 +21,18 @@ const title = "記事";
         posts.map((post) => (
           <li class="article-li">
             <p class="post-head">
-              <time>{post.data.pubFromatedDate}</time>
+              <time class="text-blue/80 dark:text-blue-400">
+                {post.data.pubFromatedDate}
+              </time>
               {post.data.tags.map((t) => (
                 <span class="tag">#{t}</span>
               ))}
             </p>
             <a href={`/blog/article/${post.slug}/`}>{post.data.title}</a>
             <div class="desc">
-              <p class="post-desc">{post.body}</p>
+              <p class="post-desc text-stone-500/80 dark:text-gray-300">
+                {post.body}
+              </p>
             </div>
           </li>
         ))
@@ -39,7 +43,7 @@ const title = "記事";
 
 <style>
   .articles {
-    @apply bg-white max-w-xs sm:max-w-lg md:max-w-xl my-6;
+    @apply max-w-xs sm:max-w-lg md:max-w-xl my-6;
   }
   .article-li {
     @apply flex flex-col justify-center my-4 lg:my-10;
@@ -48,7 +52,7 @@ const title = "記事";
     @apply text-xs lg:text-sm;
   }
   .article-li time {
-    @apply text-navy/80 font-semibold my-1 lg:my-3;
+    @apply font-semibold my-1 lg:my-3;
   }
   .tag {
     @apply text-red-400 mx-1;
@@ -60,6 +64,6 @@ const title = "記事";
     @apply w-auto;
   }
   .post-desc {
-    @apply text-xs text-stone-500/80 text-ellipsis overflow-hidden whitespace-nowrap;
+    @apply text-xs text-ellipsis overflow-hidden whitespace-nowrap;
   }
 </style>

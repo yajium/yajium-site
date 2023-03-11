@@ -38,6 +38,9 @@ const { title, iconHeadline, desc, isHome } = Astro.props;
     </main>
     <Footer />
     <style>
+      body {
+        @apply dark:bg-dark dark:text-white;
+      }
       main {
         @apply container mx-auto my-auto;
       }

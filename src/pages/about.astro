@@ -21,7 +21,7 @@ const desc = "平和も好きです";
       {
         myLikes.map((l) => (
           <div class="like">
-            <p class="cate">{l.cate}</p>
+            <p class="text-gray-500 dark:text-gray-400">{l.cate}</p>
             <p>{l.detail.join(",")}</p>
           </div>
         ))
@@ -32,7 +32,7 @@ const desc = "平和も好きです";
       {
         myLife.map((l) => (
           <div class="life">
-            <p class="date">{l.date}</p>
+            <p class="text-gray-500 dark:text-gray-400">{l.date}</p>
             <p>{l.detail}</p>
           </div>
         ))
@@ -72,13 +72,7 @@ const desc = "平和も好きです";
   .like {
     @apply my-3 md:text-base md:font-medium;
   }
-  .cate {
-    color: #315d86;
-  }
   .life {
     @apply my-3 grid grid-cols-2 gap-0 md:text-base md:font-medium;
-  }
-  .date {
-    color: #315d86;
   }
 </style>

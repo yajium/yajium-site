@@ -11,7 +11,7 @@ const Card = (props: Props) => {
     <a
       href={props.link}
       target="_blank"
-      className="card w-auto mb-6 border-2 bg-white/60 shadow-xl"
+      className="card w-auto mb-6 border-2 dark:border-none bg-white shadow-xl"
     >
       <figure className="bg-white">
         <img
@@ -22,7 +22,7 @@ const Card = (props: Props) => {
           className="object-cover h-32 sm:h-48"
         />
       </figure>
-      <div className="card-body py-4 sm:py-6 text-navy text-center">
+      <div className="card-body py-4 sm:py-6 text-gray-500 text-center">
         <h2 className="text-base sm:text-xl font-bold text-darkBlack">
           {props.title}
         </h2>

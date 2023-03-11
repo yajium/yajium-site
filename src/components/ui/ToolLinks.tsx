@@ -15,7 +15,7 @@ const links = [
     href: "https://github.com/yajium",
     icon: <SiGithub />,
     isBlank: true,
-    color: "#181717",
+    color: "#5EE869",
     size: 26,
     title: "Github",
   },
@@ -40,7 +40,7 @@ const ToolLinks = () => {
             <a
               href={item.href}
               target="_blank"
-              className="flex gap-2 sm:gap-3 items-end py-3 pr-4 text-gray-500 link hover:text-error"
+              className="flex gap-2 sm:gap-3 items-end py-3 pr-4 text-gray-500 dark:text-white dark:hover:text-error link hover:text-error"
             >
               {item.icon}
               <p className="self-center">{item.title}</p>
