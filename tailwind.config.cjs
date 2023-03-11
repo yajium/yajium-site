@@ -34,9 +34,11 @@ module.exports = {
       colors: {
         beige: "#e5dcdc",
         darkBlack: "#454242",
-        navy: "#315d86",
+        blue: "#2E80E5",
+        dark: "#404453",
       },
     },
   },
   plugins: [require("daisyui")],
+  darkMode: "class",
 };
