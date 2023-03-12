@@ -1,5 +1,5 @@
 ---
-import ToggleDark from "./ToggleDark";
+import ToggleDarkMode from "./ToggleDark.astro";
 
 const links = [
   {
@@ -37,7 +37,7 @@ const { isHome } = Astro.props;
       </div>
     )
   }
-  <ToggleDark client:load />
+  <ToggleDarkMode />
 </nav>
 
 <style>
